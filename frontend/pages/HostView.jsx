@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import TimeBlock from '../components/timeblock';
 import WorkBlock from '../components/workBlock'
 import QRCode from "react-qr-code";
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
 export default function HostView() {
 
