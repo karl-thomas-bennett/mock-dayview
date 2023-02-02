@@ -25,10 +25,7 @@ export default function HostView() {
   
 
     useEffect(() => {
-        console.log("UseEffect")
         getWorklogs().then(data => {
-            console.log("getWorklogs")
-            console.log(data)
             setWorklogs(data)
         })
         
@@ -36,7 +33,12 @@ export default function HostView() {
         const interval = setInterval(() => {
             setTimeAndScroll();
         }, 1000);
-        return () => clearInterval(interval);
+        const interval2 = setInterval(() => {
+            getWorklogs().then(data => {
+                setWorklogs(data)
+            })
+        }, 5000);
+        return () => {clearInterval(interval); clearInterval(interval2)};
       }, []);
 
 
