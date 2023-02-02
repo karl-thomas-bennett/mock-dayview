@@ -1,8 +1,8 @@
 import React from 'react'
-export default function WorkBlock({time, title}) {
+export default function WorkBlock({minutes, title}) {
     return (
-        <div class="work-block-container" style={{top: (time/15311 - 2785)+"px"}}>
-            <div class="work-block" >
+        <div className="work-block-container"  style={{top: minutes+'rem'}}>
+            <div className="work-block" >
                 {title}
             </div>
         </div>

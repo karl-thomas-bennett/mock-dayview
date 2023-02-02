@@ -1,13 +1,27 @@
 #dayview-container {
-background-color: white;
-    width: 200px;
-    position: absolute;  height: 5750px;  width: 200px;
-  -webkit-backface-visibility: visible;
-  -webkit-transform:  rotateX(40deg) rotateZ(-20deg) translateZ(100px);
-  backface-visibility: visible;
-  transform: rotateX(62deg) rotateZ(330deg) translateX(308px) translateY(2500px) translateZ(3000px);
+        width: 450px;
+        height: 280vmin;
+        overflow-y: scroll;
+        /* position: absolute; */
+        -webkit-backface-visibility: visible;
+        transform-origin: top left;
+        -webkit-transform: rotateX(62deg) rotateZ(330deg);
+        backface-visibility: visible;
+        transform: rotateX(62deg) rotateZ(330deg);
+
 }
 
+.time-block{
+    background-color: white;
+    border-top: 1px solid lightgray;
+    padding: 0.5em;
+    position: absolute;
+    font-size: 2em;
+    color: darkgray;
+    height: 15rem;
+    width: 400px;
+    box-sizing: border-box;
+}
 
 #time-marker{
     height: 5px;
@@ -24,9 +38,8 @@ background-color: white;
 
 
 .work-block-container{
-    
-    height: 60px;
-    width: 100%;
+    height: 15rem;
+    width: 400px;
     box-sizing: border-box;
    
     position: absolute;
@@ -39,28 +52,20 @@ background-color: white;
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
-    height: 50px;
+    height: 90%;
     margin-top: 50px;
-    background-color: #d2ddea;
+    background-color: #d2ddeaa8;
+    backdrop-filter: blur(12px);
     box-shadow: #b8c4d1 -5px 5px 9px 0px;
-    font-size: 0.6em;
-    border-radius: 1em;
-}
-
-.time-block{
-    border-bottom: 1px solid lightgray;
-    padding: 0.5em;
-    font-size: 0.8em;
-    color: darkgray;
-    height: 60px;
-    width: 100%;
-    box-sizing: border-box;
+    font-size: 2.5em;
+    border-radius: 20px;
+    border: 1px solid white;
 }
 #worklogs-container :nth-last-child(1){
     z-index: 11;
 }
 #worklogs-container :nth-last-child(1) .work-block{
-    background-color: #99c8ff;
+    background-color: #99c9ffb4;
     margin-left: 22px;
     /* margin-top: -1px; */
     margin-top: 42px;
@@ -68,13 +73,59 @@ background-color: white;
     box-shadow: #a7ccf5bd -24px 18px 14px 0px;
 }
 
+
+
+
+#scroll-container{
+    position: absolute;
+    left: -20rem;
+    top: 5rem;
+}
+
+
+
+
+/* QR */
+#qr-container{
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    width: 48vw;
+    height: 45vh;
+    background: #0000008a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 20;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    justify-content: space-around;
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+#qr-code{
+    /* background-color: black; */
+    padding: 1em;
+    border-radius: 20px;
+    height: 50%;
+}
+
+#title{
+    font-size: 4em;
+    font-weight: bolder;
+    text-align: right;
+    color: white;
+}
+
+
+
 body{
     background-color: black;
     font-family: 'Roboto', sans-serif;
+    overflow: clip;
 }
-
-#scroll_container{
-    width: 50vh;
-    height: 100vh;
-    overflow: none;
+html{
+    font-size: 10px;
+    overflow: clip;
 }
