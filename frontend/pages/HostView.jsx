@@ -32,24 +32,30 @@ export default function HostView() {
             setWorklogs(data)
         })
         
+        setTimeAndScroll();
         const interval = setInterval(() => {
-            var now = new Date(),
-            then = new Date(
-                now.getFullYear(),
-                now.getMonth(),
-                now.getDate(),
-                0,0,0),
-            diff = now.getTime() - then.getTime(); 
-
-            // console.log(diff/60000+' mins');
-            setTime(diff/60000); // change to minutes
-
-            let width = window.innerWidth;
-            document.getElementById('dayview-container').scrollTop = diff/6000 - 1400;
+            setTimeAndScroll();
         }, 1000);
         return () => clearInterval(interval);
       }, []);
 
+
+      function setTimeAndScroll(){
+        var now = new Date(),
+        then = new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate(),
+            0,0,0),
+        diff = now.getTime() - then.getTime(); 
+
+        setTime(diff/60000); // change to minutes
+        console.log(window.innerWidth);
+        const offset = 500 + window.innerWidth*0.75;
+
+        let width = window.innerWidth;
+        document.getElementById('dayview-container').scrollTop = diff/6000 - offset;
+      }
 
 
 
@@ -83,7 +89,10 @@ export default function HostView() {
             </div>
             <div id="scroll-container">
                 <div id="dayview-container" >
-                    <div id="time-marker"  style={{top: time+'rem'}}></div>;
+                    <div id="time-marker"  style={{top: time+'rem'}}>
+                        <div id='time-marker-line'></div>    
+                        <div id='time-marker-circle'></div>
+                    </div>;
                     <div id="worklogs-container">{worklogs.map((worklog, i) => <WorkBlock key={i} minutes={worklog.minutes} title={worklog.title} />)}</div>
                     {blocks().map((value, i) => <TimeBlock title={value.title} minutes={value.minutes} key={i}/>)}
                 </div>

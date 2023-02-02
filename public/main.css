@@ -24,15 +24,32 @@
 }
 
 #time-marker{
-    height: 5px;
-    border-radius: 5px;
-    width: 100%;
+    
     position: absolute;
-    background-color: orange;
+    
     margin-top: -20px;
     margin-left: 20px;
-    box-shadow: #ffa500de -14px 19px 30px 3px;
+    width: 100%;
     z-index: 10;
+}
+#time-marker-line{
+    background-color: orange;
+    box-shadow: #ffa500de -14px 19px 30px 3px;
+    height: 5px;
+    border-radius: 5px;
+    width: 89%;
+    display: inline-block;
+   margin-bottom: 5px;
+}
+
+#time-marker-circle{
+    width: 10%;
+    background-color: orange;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-left: -2px;
+    border-radius: 20px;
 }
 
 
@@ -61,6 +78,20 @@
     font-size: 2.5em;
     border-radius: 20px;
     border: 1px solid white;
+    opacity: 0;
+    margin-left: 30px;
+    animation: fade-in 0.5s  0.25s forwards;
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+        margin-left: 30px;
+    }
+    to{
+        opacity: 1;
+        margin-left: 0px;
+    }
 }
 #worklogs-container :nth-last-child(1){
     z-index: 11;
@@ -69,9 +100,9 @@
     background-color: #99c9ffb4;
     backdrop-filter: blur(5px);
     margin-left: 22px;
-    margin-top: -5px;
+    margin-top: -27px;
     transform: scale(1.02);
-    box-shadow: #a7ccf5bd -24px 18px 14px 0px;
+    box-shadow: #a7ccf5bd -30px 40px 14px 0px;
     color: #2e3946;
 }
 
@@ -164,7 +195,7 @@
     width: min(80vw, 500px);
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
     align-items: center;
 }
 
@@ -243,6 +274,7 @@
     margin-left: auto;
     text-align: center;
     border-radius: 100px;
+    margin-top: 0.5em;
 }
 
 
@@ -288,6 +320,10 @@ html{
         color: white;
     }
 
+
+    #easytime-container{
+        display: none;
+    }
 
 
 }

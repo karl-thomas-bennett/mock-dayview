@@ -6,7 +6,7 @@ export default function UserView() {
     return (
         <div className="center-objects">
             <form id='form-container'>
-                <label htmlFor='worklog-input'>Name me.</label>
+                <label htmlFor='worklog-input'>Log your time.</label>
                     <div id="worklog-card">
                         <input id="worklog-input" type="text" placeholder="My little worklog..." maxLength="20" />
                         <span>{worklogTime}</span>
