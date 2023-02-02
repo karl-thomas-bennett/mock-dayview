@@ -9,6 +9,6 @@ router.get('/', (request, response) => {
         if(err){
             response.sendStatus(500);
         }
-        response.status(200).send(data);
+        response.json(JSON.parse(data.toString()));
     })
 })
