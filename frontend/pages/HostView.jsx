@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import TimeBlock from '../components/timeblock';
 import WorkBlock from '../components/workBlock'
 import QRCode from "react-qr-code";
+const { DateTime } = require("luxon");
 
 export default function HostView() {
 
@@ -19,6 +20,7 @@ export default function HostView() {
 
     
     const [time, setTime] = useState(1); // in minutes (1 em = 1 minute)
+    const dateString = DateTime.now().toFormat("EEE dd");
   
 
     useEffect(() => {
@@ -31,7 +33,7 @@ export default function HostView() {
                 0,0,0),
             diff = now.getTime() - then.getTime(); 
 
-            console.log(diff/60000+' mins');
+            // console.log(diff/60000+' mins');
             setTime(diff/60000); // change to minutes
 
             let width = window.innerWidth;
@@ -75,6 +77,10 @@ export default function HostView() {
                     <div id="worklogs-container">{worklogs.map((worklog, i) => <WorkBlock key={i} minutes={worklog.minutes} title={worklog.title} />)}</div>
                     {blocks().map((value, i) => <TimeBlock title={value.title} minutes={value.minutes} key={i}/>)}
                 </div>
+            </div>
+            <div id="watch-container">
+                <div className="circle"></div>
+                <span id="watch-date">{dateString}</span>
             </div>
         </>
     )

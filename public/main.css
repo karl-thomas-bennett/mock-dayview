@@ -49,6 +49,7 @@
     box-sizing: border-box;
 }
 .work-block{
+    color: #7392b5;
     padding: 1em;
     width: 100%;
     box-sizing: border-box;
@@ -71,6 +72,7 @@
     margin-top: 42px;
     transform: scale(1.02);
     box-shadow: #a7ccf5bd -24px 18px 14px 0px;
+    color: #2e3946;
 }
 
 
@@ -84,6 +86,38 @@
 
 
 
+#watch-container{
+    -webkit-transform: rotateX(62deg) rotateZ(330deg);
+    backface-visibility: visible;
+    transform: rotateX(62deg) rotateZ(330deg);
+    width: 70em;
+    height: 70em;
+    left: 8em;
+    top: 6em;
+    position: absolute;
+    z-index: -1;
+}
+
+.circle{
+    width: 100%;
+    height: 100%;
+    background-color: #130d02;
+    box-shadow: inset 1em 0em 3em 0px #b7856080, inset -2em 0em 2em 0px #2d1b026b;
+    border-radius: 100%;
+}
+
+#watch-date{
+    color: #b9a591;
+    position: absolute;
+    font-size: 2em;
+    top: 15em;
+    left: 2.75em;
+    font-family: monospace;
+    border: 1px solid #6b5437;
+    padding: 0.5em;
+    border-radius: 12px;
+}
+
 
 /* QR */
 #qr-container{
@@ -92,13 +126,11 @@
     right: 1em;
     width: 48vw;
     height: 45vh;
-    background: #0000008a;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     z-index: 20;
     border-radius: 20px;
-    backdrop-filter: blur(12px);
     justify-content: space-around;
     padding: 2em;
     box-sizing: border-box;
@@ -109,6 +141,8 @@
     padding: 1em;
     border-radius: 20px;
     height: 50%;
+    background: #0000008a;
+     backdrop-filter: blur(12px);
 }
 
 #title{
@@ -122,10 +156,34 @@
 
 body{
     background-color: black;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Gantari', 'Roboto', sans-serif;
     overflow: clip;
 }
 html{
     font-size: 10px;
     overflow: clip;
+}
+
+
+
+@media screen and (max-width: 620px){ /* Mobile */
+    #qr-container{
+        bottom: 1em;
+        left: 1em;
+        right: unset;
+        top: unset;
+        align-items: flex-start;
+        width: 80vw;
+        flex-direction: column-reverse;
+    }
+
+    #title{
+        font-size: 3em;
+        font-weight: bolder;
+        text-align: left;
+        color: white;
+    }
+
+
+
 }
