@@ -174,7 +174,7 @@
     position: fixed;
     top: 1em;
     right: 1em;
-    width: 48vw;
+    width: 56vw;
     height: 45vh;
     display: flex;
     flex-direction: column;
@@ -235,7 +235,7 @@
 #easytime-title, #dayview-title{
     font-size: 4em;
     font-weight: bolder;
-    color: white;
+    color: rgb(63, 63, 63);
 }
 
 
@@ -331,7 +331,7 @@ html{
 
 
 
-@media screen and (max-width: 1000px){ /* Mobile */
+@media screen and (max-width: 900px){ /* Mobile */
     #qr-container{
         bottom: 1em;
         left: 1em;

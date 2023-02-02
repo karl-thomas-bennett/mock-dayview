@@ -16,7 +16,7 @@ export default function UserView() {
     
     return (
         <div className="center-objects">
-            <form id='form-container' onSubmit={() => {submit(title)}}>
+            <form id='form-container' onSubmit={() => {submit(title)}} action="https://techtime.co.nz/display/TECHTIME/EasyTime">
                 <label htmlFor='worklog-input'>Log your time.</label>
                 
                 <div id="worklog-card">

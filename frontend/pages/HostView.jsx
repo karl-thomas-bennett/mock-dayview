@@ -72,7 +72,7 @@ export default function HostView() {
     ])
 
 
-    const link = "testhhey";
+    const link = "http://192.168.0.165:3000/user";
     
     return (
         <>
