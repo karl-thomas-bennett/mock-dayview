@@ -3,6 +3,7 @@ import TimeBlock from '../components/timeblock';
 import WorkBlock from '../components/workBlock'
 import QRCode from "react-qr-code";
 import { DateTime } from "luxon";
+import { getWorklogs } from '../api/worklogs';
 
 export default function HostView() {
 
@@ -24,6 +25,13 @@ export default function HostView() {
   
 
     useEffect(() => {
+        console.log("UseEffect")
+        getWorklogs().then(data => {
+            console.log("getWorklogs")
+            console.log(data)
+            setWorklogs(data)
+        })
+        
         const interval = setInterval(() => {
             var now = new Date(),
             then = new Date(
