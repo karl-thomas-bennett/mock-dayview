@@ -25,19 +25,16 @@ export default function HostView() {
   
 
     useEffect(() => {
-        getWorklogs().then(data => {
-            setWorklogs(data)
-        })
-        
+        getWorklogs().then(data => { setWorklogs(data) })
         setTimeAndScroll();
+
         const interval = setInterval(() => {
             setTimeAndScroll();
-        }, 1000);
+        }, 10000);
         const interval2 = setInterval(() => {
-            getWorklogs().then(data => {
-                setWorklogs(data)
-            })
-        }, 5000);
+            getWorklogs().then(data => { setWorklogs(data)  })
+        }, 2000);
+
         return () => {clearInterval(interval); clearInterval(interval2)};
       }, []);
 
@@ -66,9 +63,12 @@ export default function HostView() {
         {title: "Hello world", minutes: 495}, 
         {title: "Hello world", minutes: 510}, 
         {title: "Hello world", minutes: 540}, 
-        // {title: "Test 1", minutes: 1290}, 
-        // {title: "Another one", minutes: 1305},
-        // {title: "Active one", minutes: 1320} // 22:00
+        {title: "Hello guys", minutes: 555}, 
+        {title: "Hello me", minutes: 570}, 
+        {title: "TechTime with ya boi", minutes: 600}, 
+        {title: "Bruh moment", minutes: 615}, 
+        {title: "Declan says hi", minutes: 630}, 
+        
     ])
 
 

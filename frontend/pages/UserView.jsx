@@ -18,9 +18,10 @@ export default function UserView() {
         <div className="center-objects">
             <form id='form-container' onSubmit={() => {submit(title)}}>
                 <label htmlFor='worklog-input'>Log your time.</label>
+                
                 <div id="worklog-card">
                     <input id="worklog-input" type="text" placeholder="My little worklog..." maxLength="20" value={title} onChange={e => {setTitle(e.target.value)}}/>
-                    <span>{worklogTime}</span>
+                    <span>{worklogTime} - 15m</span>
                 </div>
                 
                 <button id="worklog-submit" type='submit'>Sweet as!</button>
