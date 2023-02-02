@@ -33,8 +33,8 @@ export default function HostView() {
         }, 10000);
         const interval2 = setInterval(() => {
             getWorklogs().then(data => { setWorklogs(data)  })
-        }, 5000);
-        
+        }, 2000);
+
         return () => {clearInterval(interval); clearInterval(interval2)};
       }, []);
 
