@@ -37,7 +37,7 @@ export default function HostView() {
             setTime(diff/60000); // change to minutes
 
             let width = window.innerWidth;
-            document.getElementById('dayview-container').scrollTop = diff/6000;
+            document.getElementById('dayview-container').scrollTop = diff/6000 - 1400;
         }, 1000);
         return () => clearInterval(interval);
       }, []);
@@ -47,9 +47,12 @@ export default function HostView() {
 
 
     const [worklogs, setWorklogs] = useState([
-        {title: "Test 1", minutes: 1290}, 
-        {title: "Another one", minutes: 1305},
-        {title: "Active one", minutes: 1320} // 22:00
+        {title: "Hello world", minutes: 495}, 
+        {title: "Hello world", minutes: 510}, 
+        {title: "Hello world", minutes: 540}, 
+        // {title: "Test 1", minutes: 1290}, 
+        // {title: "Another one", minutes: 1305},
+        // {title: "Active one", minutes: 1320} // 22:00
     ])
 
 
@@ -69,7 +72,6 @@ export default function HostView() {
                     viewBox={`0 0 256 256`}
                     />
                 </div>
-                
             </div>
             <div id="scroll-container">
                 <div id="dayview-container" >
@@ -81,6 +83,10 @@ export default function HostView() {
             <div id="watch-container">
                 <div className="circle"></div>
                 <span id="watch-date">{dateString}</span>
+            </div>
+            <div id="easytime-container">
+                <span id="easytime-title">EasyTime</span>
+                <span id="dayview-title">DayView.</span>
             </div>
         </>
     )
