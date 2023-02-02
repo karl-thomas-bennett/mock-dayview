@@ -1,0 +1,16 @@
+#dayview-container {
+background-color: white;
+    width: 200px;
+}
+
+.time-block{
+    border-bottom: 1px solid lightgray;
+    padding: 1em;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
