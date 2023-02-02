@@ -27,7 +27,7 @@ export default function HostView() {
         setTimeAndScroll();
         const interval = setInterval(() => {
             setTimeAndScroll();
-        }, 1000);
+        }, 10000);
         return () => clearInterval(interval);
       }, []);
 
@@ -56,9 +56,12 @@ export default function HostView() {
         {title: "Hello world", minutes: 495}, 
         {title: "Hello world", minutes: 510}, 
         {title: "Hello world", minutes: 540}, 
-        // {title: "Test 1", minutes: 1290}, 
-        // {title: "Another one", minutes: 1305},
-        // {title: "Active one", minutes: 1320} // 22:00
+        {title: "Hello guys", minutes: 555}, 
+        {title: "Hello me", minutes: 570}, 
+        {title: "TechTime with ya boi", minutes: 600}, 
+        {title: "Bruh moment", minutes: 615}, 
+        {title: "Declan says hi", minutes: 630}, 
+        
     ])
 
 
