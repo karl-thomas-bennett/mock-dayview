@@ -3,6 +3,7 @@ import TimeBlock from '../components/timeblock';
 import WorkBlock from '../components/workBlock'
 import QRCode from "react-qr-code";
 import { DateTime } from "luxon";
+import { getWorklogs } from '../api/worklogs';
 
 export default function HostView() {
 
@@ -24,11 +25,17 @@ export default function HostView() {
   
 
     useEffect(() => {
+        getWorklogs().then(data => { setWorklogs(data) })
         setTimeAndScroll();
+
         const interval = setInterval(() => {
             setTimeAndScroll();
         }, 10000);
-        return () => clearInterval(interval);
+        const interval2 = setInterval(() => {
+            getWorklogs().then(data => { setWorklogs(data)  })
+        }, 5000);
+        
+        return () => {clearInterval(interval); clearInterval(interval2)};
       }, []);
 
 
